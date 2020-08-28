@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFB FAIR-bioinfo training</title>
+
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Icons -->
+    <!-- https://boxicons.com/ -->
+    
+    <script src="assets/js/boxicons.js"></script>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Nav icon -->
+    <link rel="icon" type="image/png" href="assets/img/logo.png" />
+
+</head>
+<body> 
+    <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="./assets/img/logo.png" height="30" class="d-inline-block align-top" alt="">
+                FAIR-bioinfo
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Description">Description</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Programme">Programme</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Editions
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://github.com/thomasdenecker/FAIR_Bioinfo" target="_blank">2019</a>
+                            <a class="dropdown-item" href="#">2020</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <div id="home"></div>
+    <div class="sectionCover d-flex flex-column justify-content-center align-items-center">
+        <h1>FAIR bioinfo </h1>
+        <p style="font-size: 1.6em;text-align:center;">Comment rendre un projet bioinformatique plus reproductible</p>
+        
+    </div>
+
+    <div class="container">
+
+        <h2 id="Description">Description</h2>
+        <p>L’Institut Français de Bioinformatique (<a href="https://www.france-bioinformatique.fr/">IFB</a>) organise en
+            partenariat avec l’Institut de Biologie Intégrative de la Cellule (I2BC) une formation à destination des
+            bioinformaticiens et biostatisticiens souhaitant mettre en oeuvre les principes “FAIR” (Facile à trouver,
+            Accessible, Interopérable, Réutilisable) dans leurs projets d’analyse et de développement. Les concepts FAIR,
+            initialement définis dans le contexte d’ouverture des données de la recherche, seront ici adaptés pour cadrer avec
+            un projet type de développement et/ou analyse bioinformatique/biostatistique. Ainsi, la formation n’abordera pas les
+            aspects “FAIR” spécifiques aux données mais introduira plusieurs outils permettant d’améliorer la reproductibilité
+            des analyses.
+        </p>
+        
+        <h3 id="objectifs">Objectifs pédagogiques</h3>
+        
+        <p>A la fin de cette formation, les participants pourront mettre en oeuvre les principes de la science reproductible :
+            encapsuler un environnement de travail, concevoir et exécuter des workflows, gérer des versions de code, passer à
+            l’échelle sur un cluster de calcul, gérer des environnements logiciels et assurer la traçabilité de leur analyse à
+            l’aide de Notebooks.</p>
+        
+        <h3 id="organisation">La formation organisée en deux temps</h3>
+        
+        <p>La formartion s’organise en deux temps :</p>
+        
+        <ul>
+            <li>Premier et deuxième jours : formation théorique et pratique aux outils de la science reproductible dans un
+                projet bioinformatique</li>
+            <li>Troisième jour : atelier optionnel de travail sur le matériel pédagogique de la formation à destination de
+                futurs formateurs</li>
+        </ul>
+        
+        <h3 id="prérequis">Prérequis</h3>
+        
+        <p>Linux, programmation shell, notions de R et Python</p>
+        
+        <h3 id="tarifs">Tarifs</h3>
+        
+        <p>Académique : 120 € pour 2 jours et 180 € pour 3 jours
+            Non-académique : 600 € pour 2 jours ou 900 € pour 3 jours</p>
+        
+        <h3 id="important">Important</h3>
+        
+        <p>Le nombre de participants est limité à 15 personnes maximum . Il est possible d’assister uniquement aux deux premiers
+            jours de la formation, merci de nous indiquer cette information dans le formulaire d’inscription.</p>
+        
+        <p>Vous devrez vous munir de votre ordinateur portable avec installation préalable de <a
+                href="https://docs.docker.com/get-docker">docker</a> pour pouvoir participer à la formation</p>
+        
+        <h3 id="organisateurs">Organisateurs</h3>
+        
+        <ul>
+            <li>IFB : Hélène Chiapello, Gildas Le Corguillé, Yoursra Mahmah, Julien Seiler, Jacques van Helden</li>
+            <li>I2BC : Thomas Denecker, Céline Hernandez, Claire Toffano-Nioche</li>
+        </ul>
+        
+        <h2 id="Programme">Programme et slides</h2>
+        
+        <h3 id="jour-1">Jour 1</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Créneaux</th>
+                        <th style="width: 40%;">Titre</th>
+                        <th style="width: 35%;">Intervenants</th>
+                        <th style="width: 10%;">Slides</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9h30 - 10h00</td>
+                        <td>Accueil café</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>10h00 - 10h30</td>
+                        <td>Tour de table, présentation de la formation. </td>
+                        <td>Hélène Chiapello &amp; Jacques van Helden</td>
+                        <td><a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>10h30-11h30</td>
+                        <td>Introduction à la reproductibilité</td>
+                        <td>Claire Toffano-Nioche</td>
+                        <td><a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>11h30-12h00</td>
+                        <td>Encapsulation (docker) </td>
+                        <td>Céline Hernandez</td>
+                        <td><a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>12h00-12h30</td>
+                        <td>TP1</td>
+                        <td>Céline Hernandez &amp; Thomas Denecker</td>
+                        <td><a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>12h30-13h00</td>
+                        <td>TP2</td>
+                        <td>Céline Hernandez &amp; Thomas Denecker</td>
+                        <td><a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>13h00-14h00</td>
+                        <td>Repas</td>
+                        <td></td>
+                        <td><a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>14h00-14h30</td>
+                        <td>Workflows (snakemake)</td>
+                        <td>Claire Toffano-Nioche</td>
+                        <td><a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>14h30-15h00</td>
+                        <td>TP1</td>
+                        <td>Claire Toffano-Nioche &amp; Thomas Denecker</td>
+                        <td><a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>15h00-15h30</td>
+                        <td>TP2</td>
+                        <td>Claire Toffano-Nioche &amp; Thomas Denecker</td>
+                        <td><a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>15h30-16h00</td>
+                        <td>Pause</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>16h00-16h30</td>
+                        <td>Présentation de l’infrastructure IFB (cluster/slurm) </td>
+                        <td> Julien Seiler &amp; Gildas Le Corguillé </td>
+                        <td><a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>16h30-17h00</td>
+                        <td>TP1</td>
+                        <td>Julien Seiler &amp; Gildas Le Corguillé</td>
+                        <td><a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>17h00-17h30</td>
+                        <td>TP2</td>
+                        <td>Julien Seiler &amp; Gildas Le Corguillé</td>
+                        <td><a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        
+        
+        <h3 id="jour-2">Jour 2</h3>
+        <div class="table-responsive">
+            <table class="table">
+        
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Créneaux</th>
+                        <th style="width: 40%;">Titre</th>
+                        <th style="width: 35%;">Intervenants</th>
+                        <th style="width: 10%;">Slides</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 09h00-09h30</td>
+                        <td> Gestion de l’historique</td>
+                        <td> Claire Toffano-Nioche</td>
+                        <td> <a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 09h30-10h00 </td>
+                        <td> TP1</td>
+                        <td> Claire Toffano-Nioche &amp; Thomas Denecker</td>
+                        <td> <a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 10h00-10h30</td>
+                        <td> TP2</td>
+                        <td> Claire Toffano-Nioche &amp; Thomas Denecker</td>
+                        <td> <a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 10h30-11h00</td>
+                        <td> Pause</td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td> 11h00-11h30</td>
+                        <td> TP3</td>
+                        <td> Claire Toffano-Nioche &amp; Thomas Denecker</td>
+                        <td> <a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 11h30-12h00</td>
+                        <td> Gestion des environnements logiciels</td>
+                        <td> Claire Toffano-Nioche</td>
+                        <td> <a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 12h00-12h30</td>
+                        <td> TP1</td>
+                        <td> Claire Toffano-Nioche &amp; Thomas Denecker</td>
+                        <td> <a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 12h30-14h00</td>
+                        <td> Repas</td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td> 14h00-14h30</td>
+                        <td> Traçabilité avec les Notebooks </td>
+                        <td> Céline Hernandez</td>
+                        <td> <a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 14h30-15h30</td>
+                        <td> TP Markdown </td>
+                        <td> Céline Hernandez &amp; Thomas Denecker</td>
+                        <td> <a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 15h30-16h00</td>
+                        <td> Pause</td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td> 16h00-17h00</td>
+                        <td> Partage et diffusion </td>
+                        <td> Céline Hernandez</td>
+                        <td> <a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 17h00-17h30</td>
+                        <td> Conclusion</td>
+                        <td> Céline Hernandez &amp; Thomas Denecker</td>
+                        <td> <a href="#" target="_blank">Lien</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3 id="jour-3">Jour 3</h3>
+        
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Créneaux</th>
+                        <th style="width: 85%;">Titre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09h00-10h00</td>
+                        <td>Bilan des évaluations des participants et discussions sur les points d'amélioration.</td>
+                    </tr>
+                    <tr>
+                        <td>10h00-12h00</td>
+                        <td>Travail sur le matériel de cours (diapos, exercices) </td>
+                    </tr>
+                    <tr>
+                        <td>12h00-13h00</td>
+                        <td>Pause déjeuner</td>
+                    </tr>
+                    <tr>
+                        <td>13h00-15h00</td>
+                        <td>Travail sur le matériel de cours (diapos, exercices)</td>
+                    </tr>
+                    <tr>
+                        <td>15h00-16h00 </td>
+                        <td>Restitution et conclusion</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>L'ensemble des slides est disponibles au format .tex sur <a
+                href="https://github.com/chernan/FAIR_bioinfo_docs">ici</a>.</p>
+        
+        
+        <h2 id="informations-pratiques">Informations pratiques</h2>
+
+        <p>La formation aura lieu du <strong>lundi 31 août 2020 - 10:00 (accueil café à 9:30) au mercredi 2 septembre 2020 - 16:00 </strong> </p>
+        
+        <p>Les déjeuners et pauses des 3 jours sont pris en charge par l’IFB. Les frais de déplacement et logement sont à la
+            charge des participants.</p>
+        
+        <h3 id="hotels">Suggestion d’hôtels</h2>
+        
+        <ul>
+            <li>Hotel ibis (Paris Place d’Italie) : 25 avenue Stephen Pichon, Paris 13ÈME</li>
+            <li>AMHotel : 96 Avenue de Choisy, Paris 13ÈME</li>
+            <li>Green Hotel: 27-90 Rue DE Patay, Paris 13ÈME</li>
+            <li>Timhotel (Paris Place d’Italie) : 178 Boulevard Vincent Auriol, Paris 13ÈME</li>
+            <li>Hotel Neptune Paris : 15 rue Godefroy, Paris 13ÈME</li>
+            <li>Ibis Styles (Paris Tolbiac Bibliothèque) : 21 rue de Tolbiac, Paris 13ÈME</li>
+        </ul>
+        
+        <h3 id="localisation">Localisation</h2>
+
+            <p><strong><a href="https://iscpif.fr">Institut des Systèmes Complexes</a> </strong> <br>
+            113 rue Nationale 75013 <br>
+            Paris</p>
+            
+            <p><strong>Métros</strong> : Olympiades (L14) ou Nationale (L6)</p>
+            
+            <p><strong>Station Vélib</strong> : place Nationale.</p>
+        
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.5057125355834!2d2.3625620150479514!3d48.82949177928466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e672275f8e5c6b%3A0xfd9a8e9ec6d52ab6!2sInstitut%20des%20Syst%C3%A8mes%20Complexes!5e0!3m2!1sfr!2sfr!4v1598362007233!5m2!1sfr!2sfr"
+            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
+        
+        <h3 id="inscription">Inscription</h2>
+        
+        <p>Les inscriptions ont lieux sur le site suivant : <a
+                href="https://ressources.france-bioinformatique.fr/fr/evenements/principes-fair-appliques-a-la-bioinformatique#map">ici</a>
+        </p>
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            
+            <span class="text-muted"><a href="https://github.com/IFB-ElixirFr/IFB-FAIR-bioinfo-training">IFB-FAIR-bioinfo-training</a> is maintained by <a
+                href="https://github.com/IFB-ElixirFr">IFB-ElixirFr</a>.</span>
+        </div>
+    </footer>
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+</body>
+</html>
