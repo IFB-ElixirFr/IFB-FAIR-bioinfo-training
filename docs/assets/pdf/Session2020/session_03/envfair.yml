@@ -1,0 +1,22 @@
+channels:
+  - conda-forge
+  - bioconda
+  - main
+  - r
+  - default
+dependencies:
+  # Specify python version (not required but can help with downstream conflicts)
+  - python=3.7.6
+  # The workflow manager
+  - snakemake-minimal=5.10.0
+  # For visualizing workflows
+  - graphviz=2.42.3
+  - xorg-libxrender
+  - xorg-libxpm
+  # For downloading files
+  - wget=1.20.1
+  # For the RNAseq analysis
+  - fastqc=0.11.9
+  - bowtie2=2.4.1
+  - samtools=1.10
+  - subread=2.0.1
