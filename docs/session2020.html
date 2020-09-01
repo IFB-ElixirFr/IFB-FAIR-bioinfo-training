@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFB FAIR-bioinfo training</title>
+
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Icons -->
+    <!-- https://boxicons.com/ -->
+    
+    <script src="assets/js/boxicons.js"></script>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Nav icon -->
+    <link rel="icon" type="image/png" href="assets/img/logo.png" />
+
+</head>
+<body> 
+    <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="./assets/img/logo.png" height="30" class="d-inline-block align-top" alt="">
+                FAIR-bioinfo
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Description">Description</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Programme">Programme</a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Editions
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://github.com/thomasdenecker/FAIR_Bioinfo" target="_blank">2019</a>
+                            <a class="dropdown-item" href="session2020.html">2020</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <div id="home"></div>
+    <div class="sectionCover d-flex flex-column justify-content-center align-items-center">
+        <h1>FAIR bioinfo </h1>
+        <p style="font-size: 1.6em;text-align:center;">Comment rendre un projet bioinformatique plus reproductible</p>
+        
+    </div>
+
+    <div class="container">
+        
+        <h2 id="Programme">Programme et slides</h2>
+        
+        <h3 id="jour-1">Jour 1</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Créneaux</th>
+                        <th style="width: 40%;">Titre</th>
+                        <th style="width: 35%;">Intervenants</th>
+                        <th style="width: 10%;">Slides</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9h30 - 10h00</td>
+                        <td>Accueil café</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>10h00 - 10h30</td>
+                        <td>Tour de table, présentation de la formation. </td>
+                        <td>Hélène Chiapello &amp; Jacques van Helden</td>
+                        <td><a href="./assets/pdf/Session2020/00_bienvenue.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>10h30-11h30</td>
+                        <td>Introduction à la reproductibilité</td>
+                        <td>Claire Toffano-Nioche</td>
+                        <td><a href="./assets/pdf/Session2020/01_introduction.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>11h30-12h00</td>
+                        <td>Encapsulation (docker) </td>
+                        <td>Céline Hernandez</td>
+                        <td><a href="./assets/pdf/Session2020/session_02/session02.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>12h00-12h30</td>
+                        <td>TP1</td>
+                        <td>Céline Hernandez &amp; Thomas Denecker</td>
+                        <td><a href="./assets/pdf/Session2020/session_02/TP_Docker.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>12h30-13h00</td>
+                        <td>TP2</td>
+                        <td>Céline Hernandez &amp; Thomas Denecker</td>
+                        <td><a href="./assets/pdf/Session2020/session_02/TP_Docker.pdf" target="_blank">Lien</a><br>
+                        <a href="./assets/pdf/Session2020/session_02/file.bam" target="_blank">Fichier BAM</a><br>
+                        <a href="./assets/pdf/Session2020/session_02/file.sam" target="_blank">Fichier SAM</a></td>
+                    </tr>
+                    <tr>
+                        <td>13h00-14h00</td>
+                        <td>Repas</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>14h00-14h30</td>
+                        <td>Workflows (snakemake)</td>
+                        <td>Claire Toffano-Nioche</td>
+                        <td><a href="./assets/pdf/Session2020/session_03/03_workflow.pdf" target="_blank">Lien</a><br>
+                        <a href="./assets/pdf/Session2020/session_03/envfair.yml" target=" _blank">Ficher yml</a></td>
+                    </tr>
+                    <tr>
+                        <td>14h30-15h00</td>
+                        <td>TP1</td>
+                        <td>Claire Toffano-Nioche &amp; Thomas Denecker</td>
+                        <td><a href="./assets/pdf/Session2020/session_03/03_workflow.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>15h00-15h30</td>
+                        <td>TP2</td>
+                        <td>Claire Toffano-Nioche &amp; Thomas Denecker</td>
+                        <td><a href="./assets/pdf/Session2020/session_03/03_workflow.pdf" target="_blank">Lien</a><br>
+                        <a href="./assets/pdf/Session2020/session_03/allScriptsSmk.zip" target=" _blank">Tous les scripts yml</a></td>
+                    </tr>
+                    <tr>
+                        <td>15h30-16h00</td>
+                        <td>Pause</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>16h00-16h30</td>
+                        <td>Présentation de l’infrastructure IFB (cluster/slurm) </td>
+                        <td> Julien Seiler &amp; Gildas Le Corguillé </td>
+                        <td><a href="./assets/pdf/Session2020/04_cluster.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>16h30-17h00</td>
+                        <td>TP1 - Snakemake over Slurm</td>
+                        <td>Julien Seiler &amp; Gildas Le Corguillé</td>
+                        <td><a href="./assets/pdf/Session2020/04_tp1_snakemake.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>17h00-17h30</td>
+                        <td>TP2 - Docker 2 Singularity</td>
+                        <td>Julien Seiler &amp; Gildas Le Corguillé</td>
+                        <td><a href="./assets/pdf/Session2020/04_tp2_singularity.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        
+        
+        <h3 id="jour-2">Jour 2</h3>
+        <div class="table-responsive">
+            <table class="table">
+        
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Créneaux</th>
+                        <th style="width: 40%;">Titre</th>
+                        <th style="width: 35%;">Intervenants</th>
+                        <th style="width: 10%;">Slides</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 09h00-09h30</td>
+                        <td> Gestion de l’historique</td>
+                        <td> Claire Toffano-Nioche</td>
+                        <td> <a href="./assets/pdf/Session2020/05_history.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 09h30-10h00 </td>
+                        <td> TP1</td>
+                        <td> Claire Toffano-Nioche &amp; Thomas Denecker</td>
+                        <td> <a href="./assets/pdf/Session2020/05_history.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 10h00-10h30</td>
+                        <td> TP2</td>
+                        <td> Claire Toffano-Nioche &amp; Thomas Denecker</td>
+                        <td> <a href="./assets/pdf/Session2020/05_history.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 10h30-11h00</td>
+                        <td> Pause</td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td> 11h00-11h30</td>
+                        <td> TP3</td>
+                        <td> Claire Toffano-Nioche &amp; Thomas Denecker</td>
+                        <td> <a href="./assets/pdf/Session2020/05_history.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 11h30-12h00</td>
+                        <td> Gestion des environnements logiciels</td>
+                        <td> Claire Toffano-Nioche</td>
+                        <td> <a href="./assets/pdf/Session2020/06_environment.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 12h00-12h30</td>
+                        <td> TP1</td>
+                        <td> Claire Toffano-Nioche &amp; Thomas Denecker</td>
+                        <td> <a href="./assets/pdf/Session2020/06_environment.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 12h30-14h00</td>
+                        <td> Repas</td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td> 14h00-14h30</td>
+                        <td> Traçabilité avec les Notebooks </td>
+                        <td> Céline Hernandez</td>
+                        <td> <a href="./assets/pdf/Session2020/07_notebook.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 14h30-15h30</td>
+                        <td> TP Markdown </td>
+                        <td> Céline Hernandez &amp; Thomas Denecker</td>
+                        <td> <a href="./assets/pdf/Session2020/07_notebook.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 15h30-16h00</td>
+                        <td> Pause</td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td> 16h00-17h00</td>
+                        <td> Partage et diffusion </td>
+                        <td> Céline Hernandez</td>
+                        <td> <a href="./assets/pdf/Session2020/08_sharing.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td> 17h00-17h30</td>
+                        <td> Conclusion</td>
+                        <td> Céline Hernandez &amp; Thomas Denecker</td>
+                        <td> <a href="./assets/pdf/Session2020/09_conclusion.pdf" target="_blank">Lien</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3 id="jour-3">Jour 3</h3>
+        
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Créneaux</th>
+                        <th style="width: 85%;">Titre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09h00-10h00</td>
+                        <td>Bilan des évaluations des participants et discussions sur les points d'amélioration.</td>
+                    </tr>
+                    <tr>
+                        <td>10h00-12h00</td>
+                        <td>Travail sur le matériel de cours (diapos, exercices) </td>
+                    </tr>
+                    <tr>
+                        <td>12h00-13h00</td>
+                        <td>Pause déjeuner</td>
+                    </tr>
+                    <tr>
+                        <td>13h00-15h00</td>
+                        <td>Travail sur le matériel de cours (diapos, exercices)</td>
+                    </tr>
+                    <tr>
+                        <td>15h00-16h00 </td>
+                        <td>Restitution et conclusion</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>L'ensemble des slides est disponibles au format .tex sur <a
+                href="https://github.com/chernan/FAIR_bioinfo_docs">ici</a>.</p>
+        
+        
+        <h2 id="informations-pratiques">Informations sur la session</h2>
+
+        <p>La formation a eu lieu du <strong>lundi 31 août 2020 - 10:00 (accueil café à 9:30) au mercredi 2 septembre 2020 -
+        16:00 </strong> </p>
+        
+        <h3 id="organisateurs">Organisateurs</h3>
+        <ul>
+            <li>IFB : Hélène Chiapello, Gildas Le Corguillé, Yoursra Mahmah, Julien Seiler, Jacques van Helden</li>
+            <li>I2BC : Thomas Denecker, Céline Hernandez, Claire Toffano-Nioche</li>
+        </ul>
+        
+        <h3 id="localisation">Localisation</h2>
+
+            <p><strong><a href="https://iscpif.fr">Institut des Systèmes Complexes</a> </strong> <br>
+            113 rue Nationale 75013 <br>
+            Paris</p>
+            
+            <p><strong>Métros</strong> : Olympiades (L14) ou Nationale (L6)</p>
+            
+            <p><strong>Station Vélib</strong> : place Nationale.</p>
+        
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.5057125355834!2d2.3625620150479514!3d48.82949177928466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e672275f8e5c6b%3A0xfd9a8e9ec6d52ab6!2sInstitut%20des%20Syst%C3%A8mes%20Complexes!5e0!3m2!1sfr!2sfr!4v1598362007233!5m2!1sfr!2sfr"
+            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
+
+        <h2 id="Galerie">Galerie</h2>
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="./assets/img/session2020/DSC00316.JPG" alt="Photo 1">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./assets/img/session2020/DSC00317.JPG" alt="Photo 2">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./assets/img/session2020/DSC00318.JPG" alt="Photo 3">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./assets/img/session2020/DSC00326.JPG" alt="Photo 4">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./assets/img/session2020/DSC00327.JPG" alt="Photo 5">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./assets/img/session2020/DSC00328.JPG" alt="Photo 6">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            
+            <span class="text-muted"><a href="https://github.com/IFB-ElixirFr/IFB-FAIR-bioinfo-training">IFB-FAIR-bioinfo-training</a> is maintained by <a
+                href="https://github.com/IFB-ElixirFr">IFB-ElixirFr</a>.</span>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel 
+        $('.carousel').carousel({
+                interval: 4000
+        })
+
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+</body>
+</html>
