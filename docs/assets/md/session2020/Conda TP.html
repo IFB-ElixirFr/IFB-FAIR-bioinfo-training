@@ -1,0 +1,105 @@
+<div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true"><h1 id="Conda-TP" data-id="Conda-TP"><span>Conda TP</span></h1><p><span class="toc"><ul>
+<li><a href="#Conda-TP" title="Conda TP">Conda TP</a><ul>
+<li><a href="#Conda-setup" title="Conda setup">Conda setup</a><ul>
+<li><a href="#How-to-access-conda" title="How to access conda?">How to access conda?</a></li>
+<li><a href="#Conda-environment" title="Conda environment">Conda environment</a></li>
+</ul>
+</li>
+<li><a href="#Example-of-a-conda-configuration-file" title="Example of a conda configuration file">Example of a conda configuration file</a></li>
+<li><a href="#How-to-access-tools" title="How to access tools?">How to access tools?</a><ul>
+<li><a href="#Manage-Conda-environment" title="Manage Conda environment">Manage Conda environment</a></li>
+</ul>
+</li>
+<li><a href="#1-Install-Snakemake" title="1. Install Snakemake">1. Install Snakemake</a><ul>
+<li><a href="#Objective-Create-a-conda-configuration-file-to-install-the-snakemake" title="Objective Create a conda configuration file to install the snakemake">Objective Create a conda configuration file to install the snakemake</a></li>
+<li><a href="#Hint" title="Hint">Hint</a></li>
+</ul>
+</li>
+<li><a href="#2-Install-Snakemake" title="2. Install Snakemake">2. Install Snakemake</a></li>
+</ul>
+</li>
+</ul>
+</span></p><h2 id="Conda-setup" data-id="Conda-setup"><span>Conda setup</span></h2><h3 id="How-to-access-conda" data-id="How-to-access-conda"><span>How to access conda?</span></h3><ul>
+<li>
+<p><span>Conda is so used that it could even be installed by default to your</span><br>
+<span>machine. To test this: </span><code>conda --version</code></p>
+</li>
+<li>
+<p><span>if not, may install it or got it by a docker image:</span></p>
+</li>
+</ul><pre><code class="bash hljs">docker run -i -t -v <span class="hljs-variable">${PWD}</span>:/data continuumio/miniconda3
+</code></pre><p><span>on the IFB cluster, with modules: </span><code>module load conda</code></p><h3 id="Conda-environment" data-id="Conda-environment"><span>Conda environment</span></h3><ul>
+<li>
+<p><span>We have already (blindly) use a conda configuration</span><br>
+<span>file in the workflow session:</span></p>
+<pre><code>conda env create -n envfair -f envfair.yml
+conda activate envfair
+</code></pre>
+</li>
+</ul><p><span>We will next detail the content of the configuration file, </span><code>envfair.yml</code></p><h2 id="Example-of-a-conda-configuration-file" data-id="Example-of-a-conda-configuration-file"><span>Example of a conda configuration file</span></h2><p><strong><span>envfair.yml</span></strong></p><pre><code class="python hljs">channels:
+  - conda-forge
+  - bioconda
+  - main
+  - default
+dependencies:
+  - python=<span class="hljs-number">3.7</span><span class="hljs-number">.6</span> <span class="hljs-comment"># specify python version (not required but can help with downstream conflicts)</span>
+  - snakemake-minimal=<span class="hljs-number">5.10</span><span class="hljs-number">.0</span> <span class="hljs-comment"># workflow manager</span>
+  - graphviz=<span class="hljs-number">2.42</span><span class="hljs-number">.3</span> <span class="hljs-comment"># for visualisation</span>
+  - xorg-libxrender
+  - xorg-libxpm
+  - wget=<span class="hljs-number">1.20</span><span class="hljs-number">.1</span> <span class="hljs-comment"># for downloading files</span>
+  - fastqc=<span class="hljs-number">0.11</span><span class="hljs-number">.9</span> <span class="hljs-comment"># for the RNAseq analysis</span>
+  - bowtie2=<span class="hljs-number">2.4</span><span class="hljs-number">.1</span>
+  - samtools=<span class="hljs-number">1.10</span>
+  - subread=<span class="hljs-number">2.0</span><span class="hljs-number">.1</span>
+</code></pre><h2 id="How-to-access-tools" data-id="How-to-access-tools"><span>How to access tools?</span></h2><h3 id="Manage-Conda-environment" data-id="Manage-Conda-environment"><span>Manage Conda environment</span></h3><ol>
+<li>
+<p><span>create the working environment:</span></p>
+<pre><code> conda create env -n myenv
+</code></pre>
+</li>
+<li>
+<p><span>activate it:</span></p>
+<pre><code> conda activate myenv
+</code></pre>
+</li>
+<li>
+<p><span>if not yet done, install packages (specify the channel):</span></p>
+<pre><code> conda install -c bioconda bowtie2
+</code></pre>
+</li>
+<li>
+<p><span>work with the tools</span></p>
+</li>
+<li>
+<p><span>quite the environment:</span></p>
+<pre><code> conda deactivate
+</code></pre>
+</li>
+</ol><h2 id="1-Install-Snakemake" data-id="1-Install-Snakemake"><span>1. Install Snakemake</span></h2><h3 id="Objective-Create-a-conda-configuration-file-to-install-the-snakemake" data-id="Objective-Create-a-conda-configuration-file-to-install-the-snakemake"><span>Objective Create a conda configuration file to install the snakemake</span></h3><p><span>tool.</span></p><h3 id="Hint" data-id="Hint"><span>Hint</span></h3><ul>
+<li>
+<p><span>Search its channel in the Anaconda cloud web pages</span></p>
+</li>
+<li>
+<p><span>the “minimal” environment is sufficient</span></p>
+</li>
+</ul><h2 id="2-Install-Snakemake" data-id="2-Install-Snakemake"><span>2. Install Snakemake</span></h2><ul>
+<li>
+<p><span>condaEnvSnakemake.yml</span></p>
+<pre><code>channels:
+  - conda-forge
+  - bioconda
+  - main
+dependencies:
+  - snakemake-minimal=5.10.0
+</code></pre>
+</li>
+</ul><hr><p><strong><span>NOTE</span></strong></p><p><span>It works with almost all markdown flavours (the below blank line matters).</span></p><hr><ul>
+<li>
+<p><span>run</span></p>
+<pre><code class="bash hljs">conda create env -n condaEnvSnakemake -f condaEnvSnakemake.yml
+conda activate condaEnvSnakemake
+snakemake ...
+</code></pre>
+</li>
+</ul></div>

@@ -1,0 +1,140 @@
+<div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true"><h1 id="Conda-cours" data-id="Conda-cours"><span>Conda cours</span></h1><p><span class="toc"><ul>
+<li><a href="#Conda-cours" title="Conda cours">Conda cours</a><ul>
+<li><a href="#Environment-manager" title="Environment manager">Environment manager</a><ul>
+<li><a href="#Conda-concepts-objetcs" title="Conda concepts, objetcs">Conda concepts, objetcs</a></li>
+<li><a href="#Why-using-an-environment-manager" title="Why using an environment manager?">Why using an environment manager?</a></li>
+</ul>
+</li>
+<li><a href="#Access" title="Access">Access</a><ul>
+<li><a href="#Conda-distribution" title="Conda distribution">Conda distribution</a></li>
+</ul>
+</li>
+<li><a href="#About-channels" title="About channels">About channels</a><ul>
+<li><a href="#Some-conda-channels" title="Some conda channels">Some conda channels</a></li>
+<li><a href="#Channels-list-order" title="Channels list order">Channels list order</a></li>
+</ul>
+</li>
+<li><a href="#Command" title="Command">Command</a><ul>
+<li><a href="#simple-commands" title="simple commands">simple commands</a></li>
+<li><a href="#miniconda3" title="miniconda3">miniconda3</a></li>
+</ul>
+</li>
+<li><a href="#2-modes" title="2 modes">2 modes</a><ul>
+<li><a href="#interactive" title="interactive">interactive</a></li>
+<li><a href="#configuration-file" title="configuration file">configuration file</a></li>
+<li><a href="#reproducibility" title="reproducibility">reproducibility</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</span></p><h2 id="Environment-manager" data-id="Environment-manager"><span>Environment manager</span></h2><h3 id="Conda-concepts-objetcs" data-id="Conda-concepts-objetcs"><span>Conda concepts, objetcs</span></h3><ul>
+<li>
+<p><span>Environment: a set of packages/tools in a directory (added to our</span><br>
+<span>PATH)</span></p>
+</li>
+<li>
+<p><span>Conda: an open source package + a general-purpose environment</span><br>
+<span>management system (installation, execution, upgrade). For any</span><br>
+<span>programming language, multi-platform (Windows, MacOS, Linux).</span></p>
+</li>
+<li>
+<p><span>Conda package: a compressed tarball of a tool</span></p>
+</li>
+</ul><h3 id="Why-using-an-environment-manager" data-id="Why-using-an-environment-manager"><span>Why using an environment manager?</span></h3><ul>
+<li>
+<p><span>avoid compilation and dependencies problems: an environment manager</span><br>
+<span>will take care of everything!</span></p>
+</li>
+<li>
+<p><span>have several environments in parallel each with their own set of</span><br>
+<span>tools</span></p>
+</li>
+<li>
+<p><span>useful when cross-tools dependencies are incompatible with each</span><br>
+<span>other</span></p>
+</li>
+</ul><h2 id="Access" data-id="Access"><span>Access</span></h2><h3 id="Conda-distribution" data-id="Conda-distribution"><span>Conda distribution</span></h3><ul>
+<li>
+<p><span>Anaconda: a data science platform, comes with a lot of packages</span></p>
+</li>
+<li>
+<p><span>Miniconda: come without installed packages</span></p>
+</li>
+</ul><p><span>Anconda cloud, the “conda hub”</span></p><ul>
+<li>
+<p><a href="http://anaconda.org/" target="_blank" rel="noopener"><span>Anaconda cloud</span></a><span> (private company) relies on the community of developers, concerns many domains (Machine Learning, Data Visualization,Dashboarding-web, Image Processing, Natural Language Processing, etc)</span></p>
+</li>
+<li>
+<p><span>Anaconda cloud: made up of channels/owners. Each channels contains one or more conda packages</span></p>
+</li>
+<li>
+<p><span>be careful when downloading any packages from an untrusted source,</span><br>
+<span>always inspect before installation</span></p>
+</li>
+</ul><blockquote>
+<p><span>See exo Conda Setup</span></p>
+</blockquote><h2 id="About-channels" data-id="About-channels"><span>About channels</span></h2><h3 id="Some-conda-channels" data-id="Some-conda-channels"><span>Some conda channels</span></h3><ul>
+<li>
+<p><span>defaults</span></p>
+</li>
+<li>
+<p><span>bioconda: bioinformaticians contributions</span></p>
+</li>
+<li>
+<p><span>conda-forge: many popular python packages (analogous to PyPI but</span><br>
+<span>with a unified, automated build infrastructure and more peer review</span><br>
+<span>of recipes)</span></p>
+<p><span>r: for packages in R language</span></p>
+</li>
+</ul><h3 id="Channels-list-order" data-id="Channels-list-order"><span>Channels list order</span></h3><ul>
+<li>
+<p><span>when different channels have the same package </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-5-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x21D2;</mo></math>" role="presentation" style="font-size: 119%; position: relative;"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"><span id="MJXc-Node-3" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.213em; padding-bottom: 0.37em;">⇒</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">⇒</mo></math></span></span><script type="math/tex" id="MathJax-Element-5">\Rightarrow</script></span><span> collisions</span></p>
+</li>
+<li>
+<p><span>collisions resolved following the order of your channels list     </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-6-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x21D2;</mo></math>" role="presentation" style="font-size: 119%; position: relative;"><span id="MJXc-Node-4" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-5" class="mjx-mrow"><span id="MJXc-Node-6" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.213em; padding-bottom: 0.37em;">⇒</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">⇒</mo></math></span></span><script type="math/tex" id="MathJax-Element-6">\Rightarrow</script></span><span> put supplemental channels at the bottom of your</span><br>
+<span>channel list</span></p>
+</li>
+</ul><h2 id="Command" data-id="Command"><span>Command</span></h2><h3 id="simple-commands" data-id="simple-commands"><span>simple commands</span></h3><pre><code class="bash hljs">conda create env -n myenv <span class="hljs-comment"># creation of a conda environment </span>
+conda info --envs <span class="hljs-comment"># list environments (* for the active one) </span>
+conda activate myenv <span class="hljs-comment"># active the myenv environment</span>
+conda deactivate <span class="hljs-comment"># inactivate the environment</span>
+conda list <span class="hljs-comment"># list packages (only in an active environment)</span>
+conda install package <span class="hljs-comment"># installation of a tool/package</span>
+conda remove package <span class="hljs-comment"># suppress the tool from the environment</span>
+conda env remove -n myenv <span class="hljs-comment"># suppress the myenv environment</span>
+</code></pre><h3 id="miniconda3" data-id="miniconda3"><span>miniconda3</span></h3><ul>
+<li><span>With the miniconda3 distribution and by default, environments</span><br>
+<span>are installed in a miniconda3/envs/ repository</span></li>
+</ul><h2 id="2-modes" data-id="2-modes"><span>2 modes</span></h2><h3 id="interactive" data-id="interactive"><span>interactive</span></h3><ul>
+<li>
+<p><span>create an environment</span></p>
+</li>
+<li>
+<p><span>activate the environment</span></p>
+</li>
+<li>
+<p><span>install some conda packages</span></p>
+</li>
+</ul><h3 id="configuration-file" data-id="configuration-file"><span>configuration file</span></h3><ul>
+<li>
+<p><span>list all conda packages in a configuration file (yaml or json</span><br>
+<span>format)</span></p>
+</li>
+<li>
+<p><span>create the environment based on the configuration file (option </span><code>-f</code><span>)</span></p>
+</li>
+<li>
+<p><span>activate the environment</span></p>
+</li>
+</ul><blockquote>
+<p><span>See exo Conda configuration</span></p>
+</blockquote><h3 id="reproducibility" data-id="reproducibility"><span>reproducibility</span></h3><ul>
+<li>
+<p><span>good practice: use a configuration file</span></p>
+</li>
+<li>
+<p><span>specify a precise version of a package:</span><br>
+<code>&lt;channel&gt;::&lt;package&gt;=&lt;version&gt;</code></p>
+</li>
+</ul></div>
