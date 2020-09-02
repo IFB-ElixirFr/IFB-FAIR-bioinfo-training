@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        TP Docker - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @charset "UTF-8";@import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{display:block;background:#fff;padding:.5em;color:#333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}.markdown-body{font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{font-size:16px;padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{padding-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\00a0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important;position:relative}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{text-align:center;background-color:inherit;border-radius:0;white-space:inherit;overflow:visible}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}#MathJax_Message{z-index:1000!important}.ui-infobar{position:relative;z-index:2;max-width:760px;margin:25px auto -25px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:998}.ui-toc.both-mode{margin-left:8px}.ui-toc.both-mode .ui-toc-label{height:40px;padding:10px 4px;border-top-left-radius:0;border-bottom-left-radius:0}.ui-toc-label{background-color:#e6e6e6;border:none;color:#868686;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:20px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:cover}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-published-note{color:#337ab7}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}.selectable{-webkit-user-select:text;-o-user-select:text;user-select:text}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}.site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;letter-spacing:.025em;font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-inner comment-enabled" data-hard-breaks="true" style=""><h1 id="TP-Docker" data-id="TP-Docker" style=""><a class="anchor hidden-xs" href="#TP-Docker" title="TP-Docker"><span class="octicon octicon-link"></span></a><span>TP Docker</span></h1><h2 id="Table-of-contents" data-id="Table-of-contents" style=""><a class="anchor hidden-xs" href="#Table-of-contents" title="Table-of-contents"><span class="octicon octicon-link"></span></a><span>Table of contents</span></h2><ul>
+<li><span>A. General information</span></li>
+<li><span>B. Introduction to Docker</span>
+<ul>
+<li><span>Client / Server</span></li>
+<li><span>Skeleton of a Docker command</span></li>
+<li><span>Download a pre-defined image available on the DockerHub</span></li>
+<li><span>Use a pulled image</span></li>
+<li><span>Bind a local folder into a container</span></li>
+</ul>
+</li>
+<li><span>C. Creating and interacting with a Docker container</span>
+<ul>
+<li><span>Pulling a Docker image</span></li>
+<li><span>Interacting with a Docker container</span></li>
+</ul>
+</li>
+<li><span>D.	Automating the process</span></li>
+<li><span>Bonus exercises</span>
+<ul>
+<li><span>Annex: create a mini SAM/BAM file.</span></li>
+<li><span>Annex: load a saved image</span></li>
+</ul>
+</li>
+</ul><p><strong><span>Version:</span></strong><span> 1.1 (30/08/2020)</span><br>
+<strong><span>Contacts:</span></strong></p><ul>
+<li><span>Thomas Denecker   (</span><a href="mailto:thomas.denecker@u-psud.fr" target="_blank" rel="noopener"><span>thomas.denecker@u-psud.fr</span></a><span>)</span></li>
+<li><span>Celine Hernandez (</span><a href="mailto:celine.hernandez@i2bc.paris-saclay.fr" target="_blank" rel="noopener"><span>celine.hernandez@i2bc.paris-saclay.fr</span></a><span>)  + Claire Toffano-Nioche (</span><a href="mailto:claire.toffano-nioche@universite-paris-saclay.fr" target="_blank" rel="noopener"><span>claire.toffano-nioche@universite-paris-saclay.fr</span></a><span>)</span></li>
+</ul><h2 id="A-General-information" data-id="A-General-information" style=""><a class="anchor hidden-xs" href="#A-General-information" title="A-General-information"><span class="octicon octicon-link"></span></a><span>A.	General information</span></h2><p><strong><span>Websites</span></strong><br>
+<span>Docker : </span><a href="https://www.docker.com/" target="_blank" rel="noopener"><span>https://www.docker.com/</span></a><br>
+<span>DockerHub : </span><a href="https://hub.docker.com/" target="_blank" rel="noopener"><span>https://hub.docker.com/</span></a><br>
+<span>Genomic Paris Centre hub : </span><a href="https://hub.docker.com/u/genomicpariscentre/" target="_blank" rel="noopener"><span>https://hub.docker.com/u/genomicpariscentre/</span></a></p><p><strong><span>Resources</span></strong></p><ul>
+<li><span>Docker</span>
+<ul>
+<li><span>Understanding Docker :</span><br>
+<a href="https://docs.docker.com/get-started/overview/" target="_blank" rel="noopener"><span>https://docs.docker.com/get-started/overview/</span></a></li>
+<li><span>Get started with Docker :</span><br>
+<a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener"><span>https://docs.docker.com/get-started/</span></a></li>
+<li><span>More on Dockerfiles :</span><br>
+<a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/" target="_blank" rel="noopener"><span>https://docs.docker.com/develop/develop-images/dockerfile_best-practices/</span></a></li>
+</ul>
+</li>
+</ul><p><strong><span>Samtools</span></strong><br>
+<span>Official website : </span><a href="http://www.htslib.org/" target="_blank" rel="noopener"><span>http://www.htslib.org/</span></a><br>
+<span>Documentation (v0.1.19) : </span><a href="http://www.htslib.org/doc/0.1.19/samtools.html" target="_blank" rel="noopener"><span>http://www.htslib.org/doc/0.1.19/samtools.html</span></a><br>
+<span>Documentation (v1.7) : </span><a href="http://www.htslib.org/doc/1.7/samtools.html" target="_blank" rel="noopener"><span>http://www.htslib.org/doc/1.7/samtools.html</span></a></p><h2 id="B-Introduction-to-Docker" data-id="B-Introduction-to-Docker" style=""><a class="anchor hidden-xs" href="#B-Introduction-to-Docker" title="B-Introduction-to-Docker"><span class="octicon octicon-link"></span></a><span>B.	Introduction to Docker</span></h2><h3 id="1-Client--Server" data-id="1-Client--Server" style=""><a class="anchor hidden-xs" href="#1-Client--Server" title="1-Client--Server"><span class="octicon octicon-link"></span></a><span>1.	Client / Server</span></h3><p><span>Docker is a command line-based software allowing to manipulate images and create application containers.</span></p><p><span>As presented in the course, Docker consists of two elements:</span></p><ul>
+<li><span>a server, to manage images and containers</span></li>
+<li><span>a client, used to interact with the server</span></li>
+</ul><p><span>Typing this command will give the Client and Server versions available on your computer.</span></p><pre><code>docker version
+</code></pre><h3 id="2-Skeleton-of-a-Docker-command" data-id="2-Skeleton-of-a-Docker-command" style=""><a class="anchor hidden-xs" href="#2-Skeleton-of-a-Docker-command" title="2-Skeleton-of-a-Docker-command"><span class="octicon octicon-link"></span></a><span>2.	Skeleton of a Docker command</span></h3><p><span>The general usage of the Docker command line is as follows:</span></p><pre><code>#Usage: 
+docker [OPTIONS] COMMAND [arg...]
+docker [ --help | -v | --version ]
+</code></pre><p><span>If you consider the first line, a Docker command is made of four parts.</span><br>
+<span>•	The ‘docker’ keyword</span><br>
+<span>•	[OPTIONS] : optional parameters to run the client</span><br>
+<span>•	COMMAND : the name of a command to be run by the client</span><br>
+<span>•	[arg…] : parameters for the chosen command</span></p><p><span>Usage, options and a full list of available commands can be accessed by typing :</span></p><pre><code>docker
+</code></pre><p><span>Among the most interesting for this tutorial are the commands pull, run, rm/rmi and build. All commands have a dedicated documentation page.</span></p><p><span>Try to access the basic usage of one Docker command :</span></p><pre><code>docker pull
+</code></pre><p><ins><span>Q: How many arguments are absolutely required by the command ‘docker pull’ ?</span></ins></p><p><span>Try to access the extended help page of a Docker command :</span></p><pre><code>docker pull -help
+</code></pre><p><span>This lists also the options specific to the command.</span></p><h3 id="3-Download-a-pre-defined-image-available-on-the-DockerHub" data-id="3-Download-a-pre-defined-image-available-on-the-DockerHub" style=""><a class="anchor hidden-xs" href="#3-Download-a-pre-defined-image-available-on-the-DockerHub" title="3-Download-a-pre-defined-image-available-on-the-DockerHub"><span class="octicon octicon-link"></span></a><span>3.	Download a pre-defined image available on the DockerHub</span></h3><p><strong><span>Goal: On the Docker hub, how do we find and download the ‘Samtools’ image made by the GenomicParisCentre user ?</span></strong></p><p><span>In a web browser, navigate to the DockerHub website : </span><a href="https://hub.docker.com/" target="_blank" rel="noopener"><span>docker website</span></a><span> </span><a href="https://hub.docker.com/" target="_blank" rel="noopener"><span>https://hub.docker.com/</span></a></p><p><span>Search for user : GenomicParisCentre</span><br>
+<span>As shown during the presentation, this user made many images available to the scientific community. We will have a look at the available images.</span></p><p><ins><span>Q: How many times was the STAR image downloaded ?</span></ins><br>
+<span>NB: ‘pull’ is a synonym for ‘download’.</span></p><p><span>Among the list of images, find Samtools. Click on DETAILS to access the page description for this image.</span><br>
+<span>Note that we could also have searched for all samtools images available on the DockerHub and only then, tried to find the one made by user genomicpariscentre.</span></p><p><ins><span>Q: On the Samtools image description page, can you find the ‘pull’ command of Samtools?</span></ins></p><p><span>Now, copy the pull command and execute it inside a terminal.</span><br>
+<span>By default, Docker will pull the most recent and stable version of the image (tag: latest).</span></p><pre><code>docker pull genomicpariscentre/samtools
+</code></pre><p><ins><span>Q: How many times do you see ‘Pull complete’ displayed ? Why ?</span></ins></p><p><span>You can find more information on layers </span><a href="https://docs.docker.com/storage/storagedriver/#images-and-layers" target="_blank" rel="noopener"><span>here</span></a><span>:</span><br>
+<a href="https://docs.docker.com/storage/storagedriver/#images-and-layers" target="_blank" rel="noopener"><span>https://docs.docker.com/storage/storagedriver/#images-and-layers</span></a></p><p><span>Now, to be sure that the image was correctly pulled, let’s see the list of all available downloaded images inside our workspace.</span></p><pre><code>docker images
+</code></pre><p><ins><span>Q: What is the size of the genomicpariscentre/samtools image ?</span></ins></p><p><ins><span>Optional exercise : inspect the image detailed description.</span></ins></p><p><span>Run this command:</span></p><pre><code>docker inspect genomicpariscentre/samtools
+</code></pre><p><span>What is displayed on the terminal is a description of the image in JSON format.</span></p><h3 id="4-Use-a-pulled-image" data-id="4-Use-a-pulled-image" style=""><a class="anchor hidden-xs" href="#4-Use-a-pulled-image" title="4-Use-a-pulled-image"><span class="octicon octicon-link"></span></a><span>4.	Use a pulled image</span></h3><p><strong><span>Goal: Now that we have a locally installed image containing Samtools, how do we use it?</span></strong></p><p><span>Among the Docker commands, we will now use the ‘run’ command.</span></p><p><ins><span>Q: What are the options and parameters of the ‘run’ command ?</span></ins></p><p><span>As displayed on the terminal, the description of the command is ‘Run a command in a new container’.</span></p><p><ins><span>Q: What is the difference between an image and a container ?</span></ins></p><p><span>See the </span><a href="https://docs.docker.com/get-started/overview/#docker-objects" target="_blank" rel="noopener"><span>Docker documentation</span></a><span> :</span><br>
+<a href="https://docs.docker.com/get-started/overview/#docker-objects" target="_blank" rel="noopener"><span>https://docs.docker.com/get-started/overview/#docker-objects</span></a></p><p><span>Samtools has been installed as a global program in the image we pulled. Consequently, Samtools is directly accessible when interacting with the image.</span></p><p><span>Now, to run the samtools application, execute the following command:</span></p><pre><code>docker run genomicpariscentre/samtools samtools
+#Program: samtools (Tools for alignments in the SAM format)
+#Version: 1.4.1 (using htslib 1.5)
+</code></pre><p><ins><span>Q: What was displayed on the terminal ? Is it a message from Docker or from Samtools ?</span></ins></p><p><span>Congratulations!</span><br>
+<span>You just successfully downloaded and used your first Docker image !</span></p><p></p><h3 id="5-Bind-a-local-folder-into-a-container" data-id="5-Bind-a-local-folder-into-a-container" style=""><a class="anchor hidden-xs" href="#5-Bind-a-local-folder-into-a-container" title="5-Bind-a-local-folder-into-a-container"><span class="octicon octicon-link"></span></a><span>5.	Bind a local folder into a container</span></h3><p><strong><span>Goal: map a local folder and run samtools on a provided BAM file.</span></strong></p><p><span>Running samtools without parameters was interesting as a demonstration of Docker’s powerful functionalities. But if we want to really run samtools, we also need to provide parameters and, most importantly, input files. Because of encapsulation, this functionality is not available by default. We need to explicitly map a local folder to a corresponding one inside the container (usually /home/), binding the two separated worlds together.</span></p><p><span>To achieve this mapping, we use the –v option of the run command. Before trying it, you can check the command options once again.</span></p><pre><code>docker run -help
+</code></pre><p><span>To bind our current folder to the /home/ folder located inside a container, we first need the absolute path of the current folder, obtained through the unix pwd command.</span></p><pre><code>pwd
+</code></pre><p><span>This path will be used in further commands through ${PWD}.</span></p><p><span>To perform the folder mapping between the current folder and /home inside Docker, the syntax is simple. The –v option takes one parameter made out of the two paths we want to map concatenated together, with the character : as separator.</span><br>
+<span>Instead of running the samtools command, we will now just list the content of the /home/ folder inside the container.</span><br>
+<span>First without the mapping:</span></p><pre><code>docker run genomicpariscentre/samtools ls /home/
+</code></pre><p><span>Then with the mapping:</span></p><pre><code>docker run -v ${PWD}:/home/ genomicpariscentre/samtools ls /home/
+</code></pre><p><ins><span>Q: Is the file list the same as what is in your current folder?</span></ins></p><p><span>Finally, we can run samtools on a SAM/BAM file, here on a file named “file.bam” located in the current folder. Change the name of the BAM file to one of the provided files or create your own (see last page of this document).</span></p><pre><code>docker run –v ${PWD}:/home/ genomicpariscentre/samtools samtools view /home/file.bam | less
+</code></pre><h2 id="C-Using-containers" data-id="C-Using-containers" style=""><a class="anchor hidden-xs" href="#C-Using-containers" title="C-Using-containers"><span class="octicon octicon-link"></span></a><span>C. Using containers</span></h2><p><span>Our goal is to be able to create a container from a publicly available image, and to install and run </span><strong><span>samtools</span></strong><span> inside this container.</span></p><h3 id="1-Pulling-a-Docker-image" data-id="1-Pulling-a-Docker-image" style=""><a class="anchor hidden-xs" href="#1-Pulling-a-Docker-image" title="1-Pulling-a-Docker-image"><span class="octicon octicon-link"></span></a><span>1. Pulling a Docker image</span></h3><p><span>Pulling an image means downloading a publicly available image (browse </span><a href="https://hub.docker.com/" target="_blank" rel="noopener"><span>https://hub.docker.com/</span></a><span> in order to look for all uploaded images). For this practical session, we are only interested in the official ubuntu release, named </span><code>ubuntu</code><span>.</span></p><pre><code class="bash hljs">docker search ubuntu
+</code></pre><p><span>A table with four columns is now displayed. In the first column are the names of the available images. We will use these names to specify which image we are interested in. In the second column are descriptions for each image. The third column is the number of stars given by users to this particular image. The fourth and fifth columns indicate if a given image is an official release, and if it has been automatically created using a Dockerfile.</span></p><p><span>Now that we have found the image we want, we need to download it.</span></p><p><em><span>Note that the website (</span><a href="https://hub.docker.com/_/ubuntu/" target="_blank" rel="noopener"><span>https://hub.docker.com/_/ubuntu/</span></a><span>) gives you more details concerning the available versions of Ubuntu downloadable as images, as well as which one is the default version (tagged ‘latest’). For this exercise, we specify the version we want (18.04).</span></em></p><pre><code class="bash hljs">docker pull ubuntu:18.04
+</code></pre><p><strong><span>Q: What is the size of the downloaded image? Compare that to the 2GB required for a full Ubuntu 18.04 Desktop installation.</span></strong><br>
+<a href="https://help.ubuntu.com/18.04/installation-guide/amd64/apds03.html" target="_blank" rel="noopener"><span>https://help.ubuntu.com/18.04/installation-guide/amd64/apds03.html</span></a></p><p><span>Browsing the pulled images:</span></p><pre><code class="bash hljs">docker images
+</code></pre><h4 id="RECAP-basic-commands-for-Docker-images" data-id="RECAP-basic-commands-for-Docker-images"><a class="anchor hidden-xs" href="#RECAP-basic-commands-for-Docker-images" title="RECAP-basic-commands-for-Docker-images"><span class="octicon octicon-link"></span></a><span>RECAP: basic commands for Docker images</span></h4><ul>
+<li><span>Requesting the available versions of an image in the Docker registry:</span></li>
+</ul><pre><code class="bash hljs">docker search &lt;keyword&gt;
+</code></pre><ul>
+<li><span>Pulling an image:</span></li>
+</ul><pre><code class="bash hljs">docker pull &lt;name&gt;:&lt;version&gt;
+</code></pre><ul>
+<li><span>List all images:</span></li>
+</ul><pre><code class="bash hljs">docker images
+</code></pre><ul>
+<li><span>Removing an image from locally pulled ones:</span></li>
+</ul><pre><code class="bash hljs">docker rmi &lt;name&gt;:&lt;version&gt;
+</code></pre><h3 id="2-Running-a-Docker-container" data-id="2-Running-a-Docker-container" style=""><a class="anchor hidden-xs" href="#2-Running-a-Docker-container" title="2-Running-a-Docker-container"><span class="octicon octicon-link"></span></a><span>2.	Running a Docker container</span></h3><p><span>Let’s start a terminal (bash) session based on the image we just downloaded.</span></p><pre><code class="bash hljs">docker run -ti ubuntu:18.04 --name <span class="hljs-built_in">test</span> bash
+</code></pre><p><em><span>Check out </span><a href="https://docs.docker.com/engine/reference/commandline/run/" target="_blank" rel="noopener"><span>https://docs.docker.com/engine/reference/commandline/run/</span></a><span> for the meaning of both options -t -i.</span></em></p><p><span>Normally, the first part of the terminal line has changed to root@ followed by a series of letters and numbers. This series is the unique identifier for your container named </span><em><span>test</span></em><span>, which has been randomly generated at the creation of the container. You are now connected to lightweight version of Ubuntu 18.04!</span></p><p><span>Next step is to run the command that will install </span><strong><span>samtools</span></strong><span> using </span><strong><span>apt</span></strong><span> (don’t copy “$” as it shows that you are inside the shell in the Docker container you have just created).</span></p><pre><code class="bash hljs">$ apt update
+$ apt -y install samtools=1.7-1
+$ apt clean 
+</code></pre><p><span>Let’s run </span><strong><span>samtools</span></strong><span> and exit the container:</span></p><pre><code class="bash hljs">$ samtools 
+$ <span class="hljs-built_in">exit</span>
+</code></pre><p><span>Note that as we exited the container, it has now stopped. If we type again the first command of this exercise, we will get a brand new container, without </span><strong><span>samtools</span></strong><span> installed. We can check the status of the latest container created:</span></p><pre><code class="bash hljs">docker ps -l
+</code></pre><p><span>This will display a table with seven columns. In the column titled STATUS, you can check that we “Exited” the latest container we created a certain time ago.</span></p><p><span>If we want to detach the container (that is, keeping it running in the background), do Ctrl-P Ctrl-Q while inside the container shell. To go back inside a container and open a shell:</span></p><pre><code class="bash hljs">docker <span class="hljs-built_in">exec</span> -ti <span class="hljs-built_in">test</span> bash
+</code></pre><p><span>If you want to save the environment you have installed inside a given container, you can perfom a “commit” of the container </span><em><span>test</span></em><span> as an image named </span><em><span>test/image:1.0</span></em><span>:</span></p><pre><code class="bash hljs">docker commit <span class="hljs-built_in">test</span> <span class="hljs-built_in">test</span>/image:1.0
+</code></pre><p><em><span>Note: huge data files </span><strong><span>shouldn’t</span></strong><span> be loaded inside a container, otherwise the image might become too heavy. Only save useful packages inside an image!</span></em></p><h4 id="RECAP-basic-commands-for-Docker-containers" data-id="RECAP-basic-commands-for-Docker-containers"><a class="anchor hidden-xs" href="#RECAP-basic-commands-for-Docker-containers" title="RECAP-basic-commands-for-Docker-containers"><span class="octicon octicon-link"></span></a><span>RECAP: basic commands for Docker containers</span></h4><ul>
+<li><span>Starting a container on a given image running a single command:</span></li>
+</ul><pre><code class="bash hljs">docker run -ti &lt;image&gt;:&lt;version&gt; &lt;<span class="hljs-built_in">command</span>&gt;
+</code></pre><ul>
+<li><span>List all containers and their status</span></li>
+</ul><pre><code class="bash hljs">docker ps -l
+</code></pre><ul>
+<li><span>Open a shell inside a running container</span></li>
+</ul><pre><code class="bash hljs">docker <span class="hljs-built_in">exec</span> -ti &lt;container name&gt; bash
+</code></pre><ul>
+<li><span>Save a container as an image</span></li>
+</ul><pre><code class="bash hljs">docker commit &lt;container&gt; &lt;image&gt;:&lt;tag&gt;
+</code></pre><h3 id="Session-code-only" data-id="Session-code-only" style=""><a class="anchor hidden-xs" href="#Session-code-only" title="Session-code-only"><span class="octicon octicon-link"></span></a><span>Session code only:</span></h3><p><span>All code run inside this practical session:</span></p><pre><code class="bash hljs">docker pull ubuntu:18.04
+docker run -ti ubuntu:18.04 bash
+$ apt update
+$ apt -y install samtools=1.7-1
+$ apt clean 
+$ samtools 
+$ <span class="hljs-built_in">exit</span>
+</code></pre><h2 id="D-Creating-images-from-configuration-file" data-id="D-Creating-images-from-configuration-file" style=""><a class="anchor hidden-xs" href="#D-Creating-images-from-configuration-file" title="D-Creating-images-from-configuration-file"><span class="octicon octicon-link"></span></a><span>D. Creating images from configuration file</span></h2><p><span>Now we want to automate the process of installing packages inside a generic image and saving the resulting environment/container as a custom image. Let’s do it on our Ubuntu image with the installation of </span><strong><span>samtools</span></strong><span>.</span></p><p><span>All the steps that we manually did in the preceding exercise can be collected into a “recipe”/text file called a Dockerfile. A Dockerfile can then be used to build again the image on-demand.</span></p><p><span>The Dockerfile here should read:</span></p><pre><code>FROM ubuntu:18.04
+RUN apt update ; apt -y install samtools=1.7-1 ; apt clean
+</code></pre><ul>
+<li><strong><span>FROM</span></strong><span> specifies the base image that should be used as a starting point to create our new image.</span></li>
+<li><strong><span>RUN</span></strong><span> specifies any command that should be run for our purpose. In our case, we just needed one command line.</span></li>
+</ul><p><em><span>You can find more information on what can be included in a Dockerfile at this URL: </span><a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/" target="_blank" rel="noopener"><span>https://docs.docker.com/develop/develop-images/dockerfile_best-practices/</span></a><span>. Note that, for instance, it is usually a good practice to give also the name of a MAINTAINER, responsible for the writing and maintenance of the Dockerfile.</span></em></p><p><span>Now that we saw what is a Dockerfile, we will use it to build an image containing </span><strong><span>Samtools version 1.3.1</span></strong><span>, and most importantly, save it as an image.</span></p><pre><code class="bash hljs">docker build -t student/samtools:1.7 .
+</code></pre><p><span>Docker will now execute one by one each instruction written inside the Dockerfile. We can now check that we have locally a new image called student/samtools with the tag 1.7:</span></p><pre><code class="bash hljs">docker images
+</code></pre><p><span>And we can run a simple command to check if Samtools is working and what is the installed version in the image:</span></p><pre><code class="bash hljs">docker run student/samtools:1.7 samtools
+</code></pre><h3 id="RECAP-basic-commands-for-Dockerfile" data-id="RECAP-basic-commands-for-Dockerfile" style=""><a class="anchor hidden-xs" href="#RECAP-basic-commands-for-Dockerfile" title="RECAP-basic-commands-for-Dockerfile"><span class="octicon octicon-link"></span></a><span>RECAP: basic commands for Dockerfile</span></h3><ul>
+<li><span>Structure of Dockerfile</span></li>
+</ul><pre><code>FROM &lt;baseimage&gt;
+RUN &lt;command1&gt; ; &lt;command2&gt; ; &lt;...&gt;
+</code></pre><ul>
+<li><span>Building a new image from Dockerfile</span></li>
+</ul><pre><code class="bash hljs">docker build -t &lt;image&gt;:&lt;tag&gt; .
+</code></pre><h2 id="Bonus-exercises" data-id="Bonus-exercises" style=""><a class="anchor hidden-xs" href="#Bonus-exercises" title="Bonus-exercises"><span class="octicon octicon-link"></span></a><span>Bonus exercises</span></h2><h3 id="Annex--create-a-mini-SAMBAM-file" data-id="Annex--create-a-mini-SAMBAM-file" style=""><a class="anchor hidden-xs" href="#Annex--create-a-mini-SAMBAM-file" title="Annex--create-a-mini-SAMBAM-file"><span class="octicon octicon-link"></span></a><span>Annex : create a mini SAM/BAM file.</span></h3><p><span>Open a text editor (simple, like Notepad or BBEdit).</span><br>
+<span>In the blank page, paste the text below:</span></p><pre><code>@HD	VN:1.0	SO:coordinate
+@SQ	SN:ERCC-00002	LN:1037
+@SQ	SN:chr12	LN:133275309
+@PG	ID:TopHat	VN:2.1.1	CL:/opt/tophat-2.1.1/bin/tophat
+NB552053:112:H7LFHBGXG:4:13404:24475:13506	385	ERCC-00002	243	1	35M	chr12	124911843	0	AAGCTTGTTCCGTTAGCTGGCATAAGATTCCATGC	AAAAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:35	YT:Z:UU	NH:i:3	CC:Z:=	CP:i:243	HI:i:0
+NB552053:112:H7LFHBGXG:4:13404:24475:13506	129	ERCC-00002	243	1	35M	chr12	124913211	0	AAGCTTGTTCCGTTAGCTGGCATAAGATTCCATGC	AAAAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:35	YT:Z:UU	NH:i:3	CC:Z:=	CP:i:243	HI:i:1
+</code></pre><p><span>Save the file and name it </span><strong><span>file.sam</span></strong><span>. Consecutively, you can use a Docker image of Samtools to convert it into a BAM file.</span></p><h3 id="Annex--load-a-saved-image" data-id="Annex--load-a-saved-image" style=""><a class="anchor hidden-xs" href="#Annex--load-a-saved-image" title="Annex--load-a-saved-image"><span class="octicon octicon-link"></span></a><span>Annex : load a saved image</span></h3><p><span>If you have problems with your Internet connection during the practical session, you can ask for a downloaded version of the Samtools image used here.</span></p><p><span>In order to load the image, use this command.</span></p><pre><code>$ docker load &lt; savedsamtoolsimage.tar
+#0f5ff0cf6a1c: Loading layer [==================================================&gt;]    126MB/126MB
+#f1c896f31e49: Loading layer [==================================================&gt;]  15.87kB/15.87kB
+#51db18d04d72: Loading layer [==================================================&gt;]  14.85kB/14.85kB
+#f51f76255b02: Loading layer [==================================================&gt;]  5.632kB/5.632kB
+#174a611570d4: Loading layer [==================================================&gt;]  3.072kB/3.072kB
+#bfb4c941db16: Loading layer [==================================================&gt;]  58.08MB/58.08MB
+</code></pre><p><span>You can then check that it has been correctly loaded using ‘docker images’.</span></p><pre><code>$ docker images
+#REPOSITORY                    TAG         IMAGE ID        CREATED         SIZE
+#ubuntu                        18.04       6526a1858e5d    10 days ago     64.2MB
+#genomicpariscentre/samtools   latest      2ec1cf58981b    2 years ago     179MB
+
+</code></pre><p><span>For your information, this is how you save an image to a transportable archive.</span><br>
+<span>First you need to identify the image that you want to export.</span></p><pre><code>$ docker images
+#REPOSITORY                    TAG         IMAGE ID        CREATED         SIZE
+#ubuntu                        18.04       6526a1858e5d    10 days ago     64.2MB
+#genomicpariscentre/samtools   latest      2ec1cf58981b    2 years ago     179MB
+
+</code></pre><p><span>Then, you need to save the image to an archive. More information on the ‘docker save’ command is available </span><a href="https://docs.docker.com/engine/reference/commandline/save/" target="_blank" rel="noopener"><span>here</span></a><span>:</span><br>
+<a href="https://docs.docker.com/engine/reference/commandline/save/" target="_blank" rel="noopener"><span>https://docs.docker.com/engine/reference/commandline/save/</span></a></p><pre><code>$ docker save genomicpariscentre/samtools &gt; ./savedsamtoolsimage.tar
+</code></pre><p><span>You can check the image has been saved.</span></p><pre><code>$ ls -alh
+#drwxr-xr-x   4 chernand  staff   128B Aug 30 16:42 .
+#drwxr-xr-x  20 chernand  staff   640B Aug 30 16:39 ..
+#-rw-r--r--   1 chernand  staff   176M Aug 30 16:42 #savedsamtoolsimage.tar
+</code></pre><h2 id="Conclusion" data-id="Conclusion" style=""><a class="anchor hidden-xs" href="#Conclusion" title="Conclusion"><span class="octicon octicon-link"></span></a><span>Conclusion</span></h2><p><span>This is the end of the practical session. We hope you enjoyed it. Don’t hesitate to ask any questions and feel free to contact us any time after the session (email addresses on the front page).</span></p></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#TP-Docker" title="TP Docker">TP Docker</a><ul class="nav">
+<li class=""><a href="#Table-of-contents" title="Table of contents">Table of contents</a></li>
+<li><a href="#A-General-information" title="A.	General information">A.	General information</a></li>
+<li><a href="#B-Introduction-to-Docker" title="B.	Introduction to Docker">B.	Introduction to Docker</a><ul class="nav">
+<li><a href="#1-Client--Server" title="1.	Client / Server">1.	Client / Server</a></li>
+<li><a href="#2-Skeleton-of-a-Docker-command" title="2.	Skeleton of a Docker command">2.	Skeleton of a Docker command</a></li>
+<li><a href="#3-Download-a-pre-defined-image-available-on-the-DockerHub" title="3.	Download a pre-defined image available on the DockerHub">3.	Download a pre-defined image available on the DockerHub</a></li>
+<li><a href="#4-Use-a-pulled-image" title="4.	Use a pulled image">4.	Use a pulled image</a></li>
+<li><a href="#5-Bind-a-local-folder-into-a-container" title="5.	Bind a local folder into a container">5.	Bind a local folder into a container</a></li>
+</ul>
+</li>
+<li class=""><a href="#C-Using-containers" title="C. Using containers">C. Using containers</a><ul class="nav">
+<li class=""><a href="#1-Pulling-a-Docker-image" title="1. Pulling a Docker image">1. Pulling a Docker image</a></li>
+<li><a href="#2-Running-a-Docker-container" title="2.	Running a Docker container">2.	Running a Docker container</a></li>
+<li><a href="#Session-code-only" title="Session code only:">Session code only:</a></li>
+</ul>
+</li>
+<li><a href="#D-Creating-images-from-configuration-file" title="D. Creating images from configuration file">D. Creating images from configuration file</a><ul class="nav">
+<li><a href="#RECAP-basic-commands-for-Dockerfile" title="RECAP: basic commands for Dockerfile">RECAP: basic commands for Dockerfile</a></li>
+</ul>
+</li>
+<li><a href="#Bonus-exercises" title="Bonus exercises">Bonus exercises</a><ul class="nav">
+<li><a href="#Annex--create-a-mini-SAMBAM-file" title="Annex : create a mini SAM/BAM file.">Annex : create a mini SAM/BAM file.</a></li>
+<li><a href="#Annex--load-a-saved-image" title="Annex : load a saved image">Annex : load a saved image</a></li>
+</ul>
+</li>
+<li><a href="#Conclusion" title="Conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#TP-Docker" title="TP Docker">TP Docker</a><ul class="nav">
+<li class=""><a href="#Table-of-contents" title="Table of contents">Table of contents</a></li>
+<li><a href="#A-General-information" title="A.	General information">A.	General information</a></li>
+<li><a href="#B-Introduction-to-Docker" title="B.	Introduction to Docker">B.	Introduction to Docker</a><ul class="nav">
+<li><a href="#1-Client--Server" title="1.	Client / Server">1.	Client / Server</a></li>
+<li><a href="#2-Skeleton-of-a-Docker-command" title="2.	Skeleton of a Docker command">2.	Skeleton of a Docker command</a></li>
+<li><a href="#3-Download-a-pre-defined-image-available-on-the-DockerHub" title="3.	Download a pre-defined image available on the DockerHub">3.	Download a pre-defined image available on the DockerHub</a></li>
+<li><a href="#4-Use-a-pulled-image" title="4.	Use a pulled image">4.	Use a pulled image</a></li>
+<li><a href="#5-Bind-a-local-folder-into-a-container" title="5.	Bind a local folder into a container">5.	Bind a local folder into a container</a></li>
+</ul>
+</li>
+<li class=""><a href="#C-Using-containers" title="C. Using containers">C. Using containers</a><ul class="nav">
+<li class=""><a href="#1-Pulling-a-Docker-image" title="1. Pulling a Docker image">1. Pulling a Docker image</a></li>
+<li><a href="#2-Running-a-Docker-container" title="2.	Running a Docker container">2.	Running a Docker container</a></li>
+<li><a href="#Session-code-only" title="Session code only:">Session code only:</a></li>
+</ul>
+</li>
+<li><a href="#D-Creating-images-from-configuration-file" title="D. Creating images from configuration file">D. Creating images from configuration file</a><ul class="nav">
+<li><a href="#RECAP-basic-commands-for-Dockerfile" title="RECAP: basic commands for Dockerfile">RECAP: basic commands for Dockerfile</a></li>
+</ul>
+</li>
+<li><a href="#Bonus-exercises" title="Bonus exercises">Bonus exercises</a><ul class="nav">
+<li><a href="#Annex--create-a-mini-SAMBAM-file" title="Annex : create a mini SAM/BAM file.">Annex : create a mini SAM/BAM file.</a></li>
+<li><a href="#Annex--load-a-saved-image" title="Annex : load a saved image">Annex : load a saved image</a></li>
+</ul>
+</li>
+<li><a href="#Conclusion" title="Conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
