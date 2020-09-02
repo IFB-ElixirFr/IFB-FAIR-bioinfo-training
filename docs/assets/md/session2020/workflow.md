@@ -242,7 +242,7 @@ Does Snakemake do the job?
 ***Fastqc:  job or jobs?***
 Look at more precisely the fastqc job.  We have many input files but snakemake launched only one fastqc job:
 
-![image](https://github.com/chernan/FAIR_bioinfo_docs/blob/master/03_workflow/images/FAIR_ex1_o5_smk.png)
+![image](https://github.com/chernan/FAIR_bioinfo_docs/raw/master/03_workflow/images/FAIR_ex1_o5_smk.png)
 
 It is because thefastqcrule is defined with a list of files and not for one unique file and because thefastqc tool accepts both a unique file as wellas a list of files.
 
@@ -294,7 +294,7 @@ snakemake  -s exo6.smk -R all fastqc
 ***Observe the results***
 Now Snakemake did many fastqc jobs:
 
-![image](https://github.com/chernan/FAIR_bioinfo_docs/blob/master/03_workflow/images/FAIR_ex1_o6_smk.png)
+![image](https://github.com/chernan/FAIR_bioinfo_docs/raw/master/03_workflow/images/FAIR_ex1_o6_smk.png)
 
 But what happens to the runtime displays on the screen? To correct this, we will move the displays to a log file specific for each rule and each input file.
 
