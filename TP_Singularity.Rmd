@@ -1,0 +1,24 @@
+---
+title: "Présentation_cluster_IFB"
+author: "Xavier Mialhe"
+date: "02/09/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE, message=FALSE,warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# TP2 - Docker 2 Singularity
+
+Process this full [example](https://ifb-elixirfr.gitlab.io/cluster/doc/singularity/):
+
+![](ifb.png)
+
+
+## Useful links
+
+* [Request an account:](https://my.cluster.france-bioinformatique.fr)
+* [Community support:](https://community.france-bioinformatique.fr/)
+* [Learn SLURM in 5 minutes:](https://asciinema.org/a/275233)
+* [IFB Core Cluster Documentation](https://ifb-elixirfr.gitlab.io/cluster/doc/)
