@@ -1,0 +1,114 @@
+---
+title: "TP1_Snakemake_over_SLURM"
+author: "paule"
+date: "9/2/2020"
+output: html_document
+---
+
+*Note*: 
+
+* chunks of text within a grey background denote lines of code to replicate.
+* chunks of text preceeded by the '##' characters represent le answer to the executed commands.
+
+## Exercise 1: connect to the cluster through SSH
+
+* Connect to the IFB Core Cluster using your SSH client
+* Find the name of your current working directory
+
+###  Connect to the IFB Core Cluster using your SSH client
+
+```{bash ssh, eval=FALSE}
+ssh $USER@core.cluster.france-bioinformatique.fr
+```
+where $USER will be replaced by your username. The password you enter won't be visible on the the screen, for obvious security reasons. 
+If you register your public ket with core.cluster.france-bioinformatique.fr, no password will be required.
+
+### Find the name of your current working directory
+
+```{bash}
+pwd
+```
+
+
+
+## Excercice 2 : Get your environment ready
+### Create a folder for your workflow
+#```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
+#```
+
+
+```{bash mkdir, eval=FALSE}
+mkdir -p fairbio
+```
+
+### Upload your workflow
+Use **FileZilla** :
+
+1. Host: `core.cluster.france-bioinformatique.fr`.
+2. login: `your login`.
+3. Password: `your password`.
+4. Port: `22`.
+Click on `Quick connection`
+Move your `smk` and `yml` file form your local computer to the fairbio folder on the cluster
+
+### Download your input data
+The data used for the snakemake tutorial are available on Zenodo. Go to zenodo.org and copy.paste the link.
+Download the data archive using wget
+```{bash wget, eval=FALSE}
+wget -O FAIR_Bioinfo_data.tar.gz https://zenodo.org/record/3997237/files/FAIR_FAIR_Bioinfo_data.tar.gz?download=1
+
+tar -xzvf FAIR_Bioinfo_data.tar.gz
+```
+
+### Load the snakemake module and all required tools
+```{bash module_load, eval=FALSE}
+module load snakemake fastqc bowtie2 samtools subread
+```
+
+## Exercice 3 : run snakemake
+### Run your workflow using srun
+```{bash smk_srun, eval=FALSE}
+srun --cpu=12 snakemake --jobs $SLURM_CPUS_PER_TASK -s ex2_o6.smk --configfile ex2_o1.yml
+```
+Drawback : Wait for 12 cores to be available on the same CPU node
+
+### Run your workflow using --cluster mode
+```{bash smk_cluster, eval=FALSE}
+rm -r Result Tmp FastQC Logs
+snakemake --cluster "sbatch" --jobs=20 -s ex2_o6.smk --configfile ex2_o1.yml
+```
+Drawback : no control over workflow execution (you can't stop it)
+
+### Run your workflow using --drmaa mode
+**D**istributed **R**essource **M**anagment **A**pplication **A**PI
+```{bash smk_drmaa, eval=FALSE}
+rm -r Result Tmp FastQC Logs
+snakemake --drmaa --jobs=20 -s ex2_o6.smk --configfile ex2_o1.yml
+```
+`WorkflowError:`
+`Error loading drmaa support:`
+`Could not find drmaa library. Please specify its full path using the environment variable DRMAA_LIBRARY_PATH`
+
+```{bash smk_drmaa_bis, eval=FALSE}
+module load slurm-drmaa
+echo $DRMAA_LIBRARY_PATH
+snakemake --drmaa --jobs=20 -s ex2_o6.smk --configfile ex2_o1.yml
+```
+
+## Useful links
+Request an IFB account
+
+https://my.cluster.france-bioinformatique.fr/
+
+Community support
+
+https://community.france-bioinformatique.fr/
+
+Learn SLURM in 5 minutes
+
+https://asciinema.org/a/275233
+
+IFB Core Cluster Documentation 
+
+https://ifb-elixirfr.gitlab.io/cluster/doc/
