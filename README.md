@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/290853092.svg)](https://zenodo.org/badge/latestdoi/290853092)
+
 # Les principes FAIR appliqués à la bioinformatique
 
 L'Institut Français de Bioinformatique ([IFB](https://www.france-bioinformatique.fr/)) organise en partenariat avec l'Institut de Biologie Intégrative de la Cellule (I2BC) une formation à destination des bioinformaticiens et biostatisticiens souhaitant mettre en oeuvre les principes "FAIR" (Facile à trouver, Accessible, Interopérable, Réutilisable) dans leurs projets d'analyse et de développement. Les concepts FAIR, initialement définis dans le contexte d'ouverture des données de la recherche, seront ici adaptés pour cadrer avec un projet type de développement et/ou analyse bioinformatique/biostatistique. Ainsi, la formation n'abordera pas les aspects "FAIR" spécifiques aux données mais introduira plusieurs outils permettant d'améliorer la reproductibilité des analyses.
