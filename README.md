@@ -1,4 +1,4 @@
-
+[![DOI](https://zenodo.org/badge/290853092.svg)](https://zenodo.org/badge/latestdoi/290853092)
 
 # Les principes FAIR appliqués à la bioinformatique
 
