@@ -57,7 +57,7 @@ Anconda cloud, the \"conda hub\"
     with a unified, automated build infrastructure and more peer review
     of recipes)
 
-    r: for packages in R language
+ * r: for packages in R language 
 
 ### Channels list order
 
@@ -83,8 +83,8 @@ conda env remove -n myenv # suppress the myenv environment
 
 ### miniconda3
 
-* With the miniconda3 distribution and by default, environments
-are installed in a miniconda3/envs/ repository
+* By defaut into the miniconda3 distribution environments
+are installed in a `miniconda3/envs/` repository
 
 ## 2 modes
 
