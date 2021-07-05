@@ -1,6 +1,6 @@
 ---
-title: "TP1_Snakemake_over_SLURM"
-author: "paule"
+title: "Snakemake over SLURM"
+author: "Cyriel D Wilkes and Paulette Lieby"
 date: "9/2/2020"
 output: html_document
 ---
