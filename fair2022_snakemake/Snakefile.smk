@@ -43,13 +43,21 @@ GENOME = WDIR + "/genome/O.tauri_genome.fna"
 SAMPLES, = glob_wildcards("./samples/{smp}.fastq.gz")
 NB_SAMPLES = len(SAMPLES)
 
+
 ##----------------------------------------------------------------------------##
-## Rule final
+## Rapport d'analyse automatique
 ##----------------------------------------------------------------------------##
 
-rule final:
+report: "rapport/rapport_tp_snakemake.rst"
+
+##----------------------------------------------------------------------------##
+## Rule all
+##----------------------------------------------------------------------------##
+
+rule all:
     input:
         expand("fastqc/{smp}/{smp}_fastqc.zip", smp=SAMPLES),
+        expand("fastqc/{smp}/{smp}.html", smp=SAMPLES),
         expand("htseq/count_{smp}.txt", smp=SAMPLES),
         expand("graphics/graphics-{smp}.pdf", smp=SAMPLES)
 
@@ -59,11 +67,13 @@ rule final:
 
 rule fastqc:
         input:  "samples/{smp}.fastq.gz"
-        output: "fastqc/{smp}/{smp}_fastqc.zip"
+        output:
+            html="fastqc/{smp}.html",
+            "fastqc/{smp}/{smp}_fastqc.zip"
+            report("fastqc/{smp}/{smp}.html", caption="rapport/fastqc.{smp}.rst", category="QC analyse")
         message: """--- Quality check of raw data with Fastqc."""
-        shell: """
-        fastqc {input} --outdir  fastqc/{wildcards.smp}
-        """
+        shell:
+            "fastqc {input} --outdir  fastqc/{wildcards.smp}"
 ##----------------------------------------------------------------------------##
 ## BOWTIE2 BUILD
 ##----------------------------------------------------------------------------##
@@ -79,6 +89,7 @@ rule bowtie2Build:
         output4="reference/reference.4.bt2",
         outputrev1="reference/reference.rev.1.bt2",
         outputrev2="reference/reference.rev.2.bt2"
+        report("bowtie.svg", caption="report/bowtie.rst", category="Step 1")
     message: """--- Indexation of the reference genome."""
     shell: "bowtie2-build {input} {params.basename}"
 
